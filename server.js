@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 
 
 mongoose.connect('mongodb+srv://mrbui:mrbui123456@cluster0.jntsz.mongodb.net/nodetuts?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-.then(result => app.listen(5000))
+.then(result => app.listen( process.env.PORT || 5000 ))
 .catch(err => console.log(err));
 app.set("view engine", 'ejs');
 
