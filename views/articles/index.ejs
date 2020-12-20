@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bui Nam | Blog</title>
+</head>
+<body>
+  <div class="container bg-light pb-4">
+    <h1 class="mb-4 mt-4 font-weight-bold text-center pt-4">Bui Nam Blog</h1>
+    <div class="d-flex flex-row-reverse">
+      <a href="/articles/new" class="btn btn-success">Create a new blog</a>
+    </div>
+    <% articles.forEach(article => { %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h4 class="card-title text-primary"><%= article.title %></h4>
+          <div class="card-subtitle text-muted mb-2">
+            <%= article.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text mb-2"><%= article.markdown %></div>
+          <a href="articles/<%= article.slug %>" class="btn btn-success">Read More</a>
+          <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+          
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
