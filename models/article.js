@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const marked = require('marked');
 const slugify = require('slugify');
 const createDomPurify = require('dompurify');
-const { JSON, JSDOM } = require('jsdom');
+const { JSDOM } = require('jsdom');
 const dompurify = createDomPurify(new JSDOM().window);
 
 const articleSchema = new mongoose.Schema({
